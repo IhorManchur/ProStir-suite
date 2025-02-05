@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Challenge – Гра</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div> 
+    <header style="background-image: url('images/fruit.jpg');">
+        <img src="images/logo.png" alt="Логотип Party Challenge" class="logo">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Головна</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="rules" class="rules section">
+        <div class="section-header" style="background-image: url('images/grapefruit.jpg');">
+            <h2>Правила гри</h2>
+        </div>
+        <div class="rules-panel" id="rulesPanel">
+            <ul>
+                <li>За кожне виконане завдання – 1 бал.</li>
+                <li>Відмова – 3 кумедні факти про себе.</li>
+                <li>Після 5 індивідуальних завдань – командне.</li>
+                <li>Перемагає той, хто назбирав найбільше балів.</li>
+            </ul>
+        </div>
+        <button class="rules-btn" id="rulesBtn">Показати / Приховати правила</button>
+    </section>
+    
+    <section id="game" class="game section">
+        <div class="section-header" style="background-image: url('images/lime.jpg');">
+            <h2>Індивідуальні завдання</h2>
+        </div>
+        <button id="shuffleBtn" class="shuffle-btn">Перемішати завдання</button>
+        <div class="cards-grid" id="individualGrid"></div>
+        <div class="section-header" style="background-image: url('images/orange.jpg');">
+            <h2>Командні завдання</h2>
+        </div>
+        <div class="cards-grid" id="teamGrid"></div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Party Challenge by PROSTIR</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js",
+    {
+        "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 3206.8241217310456
+      }
+    },
+    "color": {
+      "value": "#e8d7af"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 2,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 4
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 32.06824121731046,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 12.180465781011474,
+        "size_min": 0.8120310520674316,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 80.17060304327615,
+      "color": "#ffffff",
+      "opacity": 0.43292125643369117,
+      "width": 2.725800503471389
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "top",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": true,
+        "rotateX": 561.194221302933,
+        "rotateY": 481.0236182596568
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "window",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 113.68434728944044,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+    });
+</script>
+</body>
+</html>

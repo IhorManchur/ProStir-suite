@@ -1,0 +1,354 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFF9E6;
+  color: black;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  padding: 50px 20px; 
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.logo {
+  position: relative;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  z-index: 2;
+  border-radius: 50%;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease-in-out;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+nav ul li a.active {
+  color: gold;
+  font-weight: bold;
+  border-bottom: 3px solid gold;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(45deg, gold, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.section {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+.rules-panel {
+  max-width: 600px; /* Максимальна ширина */
+  margin: 10px auto; /* Центрування */
+  background: #F5F5F5; /* Світлий фон */
+  border-radius: 30px; /* Закруглені кути */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Тінь для об'ємного вигляду */
+  padding: 0; /* Початковий стан без внутрішніх відступів */
+  max-height: 0; /* Прихований стан */
+  overflow: hidden; /* Ховає вміст */
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  border: 2px solid #333;
+}
+.rules-panel ul {
+  list-style: none; /* Видаляє маркери (крапочки) */
+  padding-left: 0; /* Прибирає відступи */
+}
+
+.rules-btn {
+  display: inline-block;
+  margin: 10px auto;
+  padding: 10px 16px;
+  background: #333;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.rules-btn:hover {
+  background: #FFF9E6;
+  color: black;
+}
+
+.rules-panel {
+  transition: all 0.7s ease-in-out;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.rules-panel.open {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.shuffle-btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 16px;
+  background: #333;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.shuffle-btn:hover {
+  background:#FFF9E6;
+  color: black;
+  transform: scale(1.05);
+}
+
+
+.section-header {
+  height: 60px;
+  display: flex;
+  align-items: center; /* Центрує текст вертикально */
+  justify-content: center; /* Центрує текст горизонтально */
+  position: relative;
+  color: white;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+.section-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.section-header h2 {
+  position: relative;
+  z-index: 2;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(45deg, gold, orange);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+.card-number {
+  position: absolute;
+  bottom: 10px; /* Відступ від нижнього краю картки */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  text-align: center;
+  background: rgba(227, 198, 145, 0.474); /* Легка підкладка для контрасту */
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+.flip-card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  position: relative;
+  border-radius: 10px;
+  overflow: visible;
+  transition: transform 0.2s;
+}
+
+.flip-card:hover {
+  transform: scale(1.03);
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+  position: relative;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  text-align: center;
+}
+
+.flip-card-front {
+  background: #F5F5F5;
+  background-image: url('images/logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.flip-card-back.individual {
+  background: #FFD700;
+  transform: rotateY(180deg);
+}
+  
+.flip-card-back.team {
+  background: #FFD700;
+  transform: rotateY(180deg);
+}
+
+.flip-card:active, .flip-card.touched {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); /* Золотий ефект світіння */
+  transition: 0.2s ease-in-out;
+}
+
+.flip-card.flipped .flip-card-front {
+  animation: shine 0.5s ease-in-out;
+}
+
+.cards-grid.fullscreen-active .fullscreen-card {
+  display: flex;
+}
+
+footer {
+  background: #6a5834;
+  color: white;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) 
+{
+  header nav ul {
+      flex-direction: column; /* Робить навігацію вертикальною */
+      align-items: center;
+  }
+
+  header nav ul li a {
+      font-size: 14px; /* Зменшує розмір тексту в меню */
+      padding: 8px 12px;
+    }
+
+  .logo {
+      max-width: 50%; /* Менший розмір на мобільних */
+    }
+    
+  }
+  @keyframes shine {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.7); } /* Було 1.5, зробили яскравіше */
+    100% { filter: brightness(1); }
+}
+ .shake-effect {
+  animation: shake 0.3s ease-in-out;
+}
+
+ @keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.flip-card.flipped .flip-card-front {
+    animation: shine 1s ease-in-out; /* Було 0.5s, тепер 0.7s */
+}
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: transparent;
+}
+   
+
